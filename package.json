@@ -1,0 +1,30 @@
+{
+  "name": "popapi",
+  "version": "1.0.0",
+  "description": "Fast and easy tool to batch upload files to GitHub repositories",
+  "main": "index.js",
+  "bin": {
+    "popapi": "./index.js"
+  },
+  "scripts": {
+    "test": "node index.js help"
+  },
+  "keywords": [
+    "github",
+    "upload",
+    "batch",
+    "cli",
+    "files",
+    "repository"
+  ],
+  "author": "popApi Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/popapi"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "preferGlobal": true
+}

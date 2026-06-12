@@ -1,0 +1,91 @@
+/* 
+  popApi Configuration File
+  Location: ~/.popapi/config.json
+  
+  Этот файл автоматически создаётся при первом запуске "popapi setup"
+  Вы можете отредактировать его вручную, если нужно.
+*/
+
+{
+  // Ваш GitHub токен доступа
+  // Создайте на https://github.com/settings/tokens
+  // Требуется scope: repo (Full control of private repositories)
+  // ⚠️ НИКОГДА не делитесь этим токеном!
+  "token": "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+
+  // Ваше имя пользователя GitHub
+  // Найдите на https://github.com/settings/profile
+  "username": "yourusername",
+
+  // Репозиторий по умолчанию (опционально)
+  // Если установлен, можно использовать:
+  //   popapi push ./files
+  // Вместо:
+  //   popapi push ./files myrepo
+  "defaultRepo": "my-default-repo"
+}
+
+/*
+  ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ:
+
+  1. С полной конфигурацией:
+  ───────────────────────────────────
+  {
+    "token": "ghp_...",
+    "username": "john",
+    "defaultRepo": "my-files"
+  }
+  
+  popapi push ./files
+  popapi push ./build main
+  popapi push ./src develop
+
+
+  2. Минимальная конфигурация:
+  ───────────────────────────────────
+  {
+    "token": "ghp_...",
+    "username": "john"
+  }
+  
+  popapi push ./files myrepo
+  popapi push ./files myrepo main
+
+
+  3. Разные токены для разных пользователей:
+  ───────────────────────────────────
+  На Linux/macOS создайте несколько файлов:
+  ~/.popapi/config.json  (основной)
+  ~/.popapi/config.backup.json  (резервный)
+  
+  Смените руками перед использованием:
+  cp ~/.popapi/config.backup.json ~/.popapi/config.json
+
+
+  БЕЗОПАСНОСТЬ:
+  ─────────────
+  ✅ Файл хранится локально в ~/.popapi/
+  ✅ Токен защищен правами доступа (700)
+  ✅ Никогда не коммитьте config.json в Git
+  ✅ Используйте GitHub secrets для CI/CD
+
+  
+  ЕСЛИ ТОКЕН СКОМПРОМЕТИРОВАН:
+  ─────────────────────────────
+  1. Перейдите на https://github.com/settings/tokens
+  2. Найдите и удалите токен "popApi"
+  3. Создайте новый токен
+  4. Запустите "popapi setup" и введите новый токен
+  5. Или отредактируйте этот файл вручную
+
+
+  ВЕРСИОНИРОВАНИЕ:
+  ────────────────
+  Если нужны разные конфигурации для разных проектов,
+  можно создать локальный config:
+  
+  .popapi/config.json (локальный, в проекте)
+  ~/.popapi/config.json (глобальный, для пользователя)
+  
+  Локальный config будет иметь приоритет.
+*/
